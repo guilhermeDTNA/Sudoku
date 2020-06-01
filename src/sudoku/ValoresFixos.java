@@ -10,6 +10,7 @@ package sudoku;
  * @author guilherme
  */
 public class ValoresFixos {
+
     private int linha;
     private int coluna;
     private int valor;
@@ -19,7 +20,7 @@ public class ValoresFixos {
         this.coluna = coluna;
         this.valor = valor;
     }
-    
+
     public int getLinha() {
         return linha;
     }
@@ -43,11 +44,18 @@ public class ValoresFixos {
     public void setValor(int valor) {
         this.valor = valor;
     }
-    
-    
+
+    public boolean getDisponibilidade(int linha, int coluna) {
+        if (this.linha == linha && this.coluna == coluna) {
+            return false; //Se já tiver o mesmo valor na linha e coluna
+        } else {
+            return true;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Linha: "+ getLinha()+" Coluna: "+getColuna()+" Valor: " + getValor()+"\n";
+        return "Linha: " + getLinha() + " Coluna: " + getColuna() + " Valor: " + getValor() + "\n";
     }
-    
+
 }

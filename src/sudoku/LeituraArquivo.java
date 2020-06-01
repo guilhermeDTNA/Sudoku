@@ -52,10 +52,13 @@ public class LeituraArquivo {
             } else if (i >= 1) {  //Se for maior ou igual a 1 já é a matriz
 
                 for (j = 0; j < dimensoes; j++) {
-                    if (Integer.parseInt(array[j]) != 0) {
+                    if (Integer.parseInt(array[j]) != 0) { //Se tiver um valor fixo
                         ValoresFixos valor = new ValoresFixos(i - 1, j, Integer.parseInt(array[j]));
                         valores.add(valor);
                         matriz[i - 1][j] = valor.getValor(); //Como começa do 0 o vetor, precisa ser i-1
+                    }
+                    else{
+                        matriz[i - 1][j] = 0;
                     }
                 }
             }
